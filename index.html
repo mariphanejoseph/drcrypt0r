@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Products</h1>
+  <div id="list"></div>
+</div>
+<script src="products.js"></script>
+<script>
+"use strict";
+
+const list = document.getElementById("list");
+
+PRODUCTS.forEach(function (p) {
+  const item = document.createElement("div");
+  item.className = "item";
+
+  const icon = document.createElement("img");
+  icon.src = p.icon;
+  icon.alt = p.title;
+  icon.addEventListener("error", function () {
+    icon.style.visibility = "hidden";
+  });
+
+  const info = document.createElement("div");
+  info.className = "info";
+
+  const title = document.createElement("div");
+  title.className = "title";
+  title.textContent = p.title;
+
+  const desc = document.createElement("div");
+  desc.className = "desc";
+  desc.textContent = p.description;
+
+  info.appendChild(title);
+  info.appendChild(desc);
+
+  const see = document.createElement("a");
+  see.className = "btn";
+  see.href = p.page;
+  see.textContent = "See";
+
+  item.appendChild(icon);
+  item.appendChild(info);
+  item.appendChild(see);
+  list.appendChild(item);
+});
+</script>
+</body>
+</html>
