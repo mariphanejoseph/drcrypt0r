@@ -11,7 +11,7 @@ const PRODUCTS = [
     title: "XWorm 5.6",
     description: "Xworm 5.6 remote access tool for remote control and mass execution and very light weight",
     icon: "xw.png",
-    page: "products/xworm54.html"
+    page: "products/xworm56.html"
   },
   {
     id: "neptunerat",
